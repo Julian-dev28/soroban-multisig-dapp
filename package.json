@@ -10,21 +10,21 @@
     "setup": "npm run clean && ./initialize.sh ${NETWORK:-futurenet} && npm run build-contracts && npm install",
     "clean": "rm -rf .next .soroban .soroban-example-dapp node_modules",
     "reset": "npm run clean && npm run setup",
-    "build-contracts": "soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/soroban_modified_hello_world_contract.wasm --id $(cat ./.soroban-example-dapp/hello_world_id) --rpc-url $(cat ./.soroban-example-dapp/rpc-url) --network-passphrase \"$(cat ./.soroban-example-dapp/passphrase)\" --output-dir ./.soroban/hello-world-contract --contract-name hello-world-contract"
+    "build-contracts": "soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/soroban_account_contract.wasm --id $(cat ./.soroban-example-dapp/multisig_id) --rpc-url $(cat ./.soroban-example-dapp/rpc-url) --network-passphrase \"$(cat ./.soroban-example-dapp/passphrase)\" --output-dir ./.soroban/multisig-contract --contract-name multisig-contract"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.2",
     "@stellar/freighter-api": "^1.5.1",
     "axios": "^0.27.2",
     "bigint-conversion": "^2.4.1",
-    "hello-world-contract": "file:.soroban/hello-world-contract",
+    "multisig-contract": "file:.soroban/multisig-contract",
     "global": "^4.4.0",
     "humanize-duration": "^3.27.3",
     "moment": "^2.29.4",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "soroban-client": "0.9.2",
+    "soroban-client": "^0.9.2",
     "vercel": "^31.4.0"
   },
   "devDependencies": {

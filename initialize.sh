@@ -78,12 +78,12 @@ ARGS="--network $NETWORK --source example-user"
 echo Build contracts
 make build
 
-echo Deploy the hello world contract
-HELLO_WORLD_ID="$(
+echo Deploy the multisig contract
+MULTISIG_ID="$(
   soroban contract deploy $ARGS \
-    --wasm target/wasm32-unknown-unknown/release/soroban_modified_hello_world_contract.wasm
+    --wasm target/wasm32-unknown-unknown/release/soroban_account_contract.wasm
 )"
-echo "Contract deployed succesfully with ID: $HELLO_WORLD_ID"
-echo "$HELLO_WORLD_ID" > .soroban-example-dapp/hello_world_id
+echo "Contract deployed succesfully with ID: $MULTISIG_ID"
+echo "$MULTISIG_ID" > .soroban-example-dapp/multisig_id
 
 echo "Done"
