@@ -1007,15 +1007,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "62bb4feee49fdd9f707ef802e22365a35de4b7b299de4763d44bfea899442ff9"
 
 [[package]]
-name = "soroban-account-contract"
-version = "0.0.0"
-dependencies = [
- "ed25519-dalek",
- "rand",
- "soroban-sdk",
-]
-
-[[package]]
 name = "soroban-env-common"
 version = "0.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1098,6 +1089,15 @@ dependencies = [
  "soroban-env-common",
  "soroban-env-host",
  "thiserror",
+]
+
+[[package]]
+name = "soroban-multisig-contract"
+version = "0.0.0"
+dependencies = [
+ "ed25519-dalek",
+ "rand",
+ "soroban-sdk",
 ]
 
 [[package]]
